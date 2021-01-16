@@ -1,0 +1,10 @@
+'mainpage.txt
+/**
+         @mainpage M_readline Fortran Library
+
+         @section Introduction
+
+     M_readline - Fortran module to interface with readline(3c)
+
+         @image html html/images/yarnball.gif
+*/'
