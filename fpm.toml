@@ -1,11 +1,15 @@
 # TOML file for fpm as described at https://github.com/fortran-lang/fpm/blob/master/manifest-reference.md
 name = "M_readline"
 version = "0.1.0"
-license = "license"
+license = "MIT"
 author = "John S. Urban"
 maintainer = "urbanjost@comcast.net"
 copyright = "2020 John S. Urban"
-description = "Fortran-callable interfae to the C input history editor readline(3c)"
+description = "Fortran-callable interface to the C input history editor readline(3c)"
+categories = ["command history and editing"]
+keywords = ["fortran", "input editing"]
+homepage = "https://github.com/urbanjost/M_readline.git"
+
 # demo programs
 [install]
 library="true"

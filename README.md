@@ -24,7 +24,7 @@ to provide a familiar command history interface for interactive programs.
 This will compile the M_readline module and build the example programs
 in the app/ and example/ sub-directory.
 
-## SUPPORTS FPM
+## SUPPORTS FPM ![fpm](docs/images/fpm_logo.gif)
 Alternatively, download the github repository and build it with 
 fpm ( as described at [Fortran Package Manager](https://github.com/fortran-lang/fpm) )
 ```bash
