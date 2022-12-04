@@ -12,7 +12,7 @@ homepage = "https://github.com/urbanjost/M_readline.git"
 
 # demo programs
 [install]
-library="true"
+library=true
 [build] # General Build Options
 
   ###  Automatic target discovery
@@ -318,7 +318,7 @@ M_msg          = { git = "https://github.com/urbanjost/M_msg.git" }
 #  # links and package dependencies described previously except they apply
 #  # only to this executable:
 #
-##[[ executable ]]
+##[[executable]]
 ##name = "app-name"
 ##source-dir = "prog"
 ##main = "program.f90"
@@ -369,7 +369,7 @@ M_msg          = { git = "https://github.com/urbanjost/M_msg.git" }
 #  # you may add additional programs to the example table. The following
 #  # example contains a sample of all accepted options
 #
-##[[ example ]]
+##[[example]]
 ##name = "example-tool"
 ##source-dir="example"
 ##main="tool.f90"

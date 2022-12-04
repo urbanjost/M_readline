@@ -37,5 +37,5 @@ or just list it as a dependency in your fpm.toml project file.
      [dependencies]
      M_readline        = { git = "https://github.com/urbanjost/M_readline.git" }
 ```
-## DOCUMENTATION
+## DOCUMENTATION   ![docs](docs/images/docs.gif)
   + [M_readline](https://urbanjost.github.io/M_readline/man3.html)
