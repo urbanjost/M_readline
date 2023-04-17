@@ -24,6 +24,7 @@ library=true
 auto-executables = true
 auto-examples = true
 auto-tests = true
+module-naming = true
 
   ### Package-level External Library Links
   #
@@ -49,7 +50,7 @@ name="test_suite"
 source-dir="test"
 main="test_suite_M_readline.f90"
 [test.dependencies]
-M_msg          = { git = "https://github.com/urbanjost/M_msg.git" }
+M_framework   = { git = "https://github.com/urbanjost/M_framework.git" }
 #  # This is your fpm(Fortran Package Manager) manifest file
 #  # ("fpm.toml"). It is heavily annotated to help guide you though
 #  # customizing a package build, although the defaults are sufficient
