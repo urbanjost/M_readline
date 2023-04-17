@@ -24,7 +24,8 @@ library=true
 auto-executables = true
 auto-examples = true
 auto-tests = true
-module-naming = true
+
+#module-naming = true
 
   ### Package-level External Library Links
   #
