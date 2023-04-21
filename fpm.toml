@@ -279,7 +279,7 @@ M_framework   = { git = "https://github.com/urbanjost/M_framework.git" }
 #  # all codes. It is up to the developer to ensure that nothing except
 #  # developer test programs rely upon it.
 #
-##M_msg    = { git = "https://github.com/urbanjost/M_msg.git" }
+##M_framework    = { git = "https://github.com/urbanjost/M_framework.git" }
 ##M_verify = { git = "https://github.com/urbanjost/M_verify.git" }
 #
 #  #-----------------------------------
