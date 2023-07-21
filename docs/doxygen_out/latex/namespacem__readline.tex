@@ -1,0 +1,95 @@
+\hypertarget{namespacem__readline}{}\doxysection{m\+\_\+readline Module Reference}
+\label{namespacem__readline}\index{m\_readline@{m\_readline}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacem__readline_1_1Freadline}{Freadline}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__readline_a6eae368d34bd43ead64623b2d6d10ae0}{system\+\_\+readline}} (line, prompt)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{namespacem__readline_autotoc_md0}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__readline_autotoc_md0}
+M\+\_\+readline(3fm) -\/ \mbox{[}M\+\_\+readline\+::\+I\+N\+T\+RO\mbox{]} Calling readline(3c) from Fortran (L\+I\+C\+E\+N\+SE\+:PD) \hypertarget{namespacem__readline_autotoc_md1}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__readline_autotoc_md1}
+\begin{DoxyVerb}  Use M_readline, only : system_readline
+\end{DoxyVerb}
+ \hypertarget{namespacem__readline_autotoc_md2}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__readline_autotoc_md2}
+\begin{DoxyVerb}The M_readline(3fm) module uses the ISO_C_BINDING module to create a
+binding to the GNU readline(3c) procedure from Fortran programs.
+\end{DoxyVerb}
+\hypertarget{namespacem__readline_autotoc_md3}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__readline_autotoc_md3}
+\begin{DoxyVerb}The test program is basically just a read loop that prompts for
+lines of input read with readline(3c). You can edit the line being
+read with readline(3c) per its documentation. At a minimum, you can
+probably move around the line with the left and right arrow keys, and
+insert characters by typing them wherever you moved the cursor to,
+and use the DEL/ RUBOUT key to delete characters and such. If you use
+a GNU/Linux shell with command line editing, you are probably familiar
+with readline(3c)'s function.
+
+It quits if you enter 'q' on an input line, and it dumps the history if
+you enter 'h'.
+\end{DoxyVerb}
+
+
+the test program
+
+program demo\+\_\+\+M\+\_\+readline use M\+\_\+readline implicit none character(len=256)\+:: line integer \+:: cstat character(len=256) \+:: sstat
+
+write($\ast$,$\ast$)\textquotesingle{} \+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} Your input lines are now editable using the G\+NU\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} readline(3\+C) procedure. By default, up-\/arrow and\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} down-\/arrow go thru the history lines; left and right arrow\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} keys and delete and just typing characters let you do\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} simple editing. Far more input control is available.\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} See the browser pages and man(1) pages for readline(3c).\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} \+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} Enter text and then edit it. \char`\"{}q\char`\"{} quits; \char`\"{}h\char`\"{} display history\+:\textquotesingle{}
+
+do call system\+\_\+readline(line,\textquotesingle{}readline$>$\textquotesingle{}) ! read editable input line if(line.\+eq.\textquotesingle{}q\textquotesingle{}) stop !call system(trim(line)) ! common extension call execute\+\_\+command\+\_\+line(trim(line),cmdstat=cstat,cmdmsg=sstat) ! f08 equivalent enddo end program demo\+\_\+\+M\+\_\+readline \hypertarget{namespacem__readline_autotoc_md4}{}\doxysubsubsection{A\+U\+T\+H\+OR}\label{namespacem__readline_autotoc_md4}
+John S. Urban \hypertarget{namespacem__readline_autotoc_md5}{}\doxysubsubsection{L\+I\+C\+E\+N\+SE}\label{namespacem__readline_autotoc_md5}
+Public Domain
+
+Although this interface to readline(3c) is released as Public Domain, note that the Readline library itself is free software, distributed under the terms of the \mbox{[}G\+NU\mbox{]} General Public License, version 2. 
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacem__readline_a6eae368d34bd43ead64623b2d6d10ae0}\label{namespacem__readline_a6eae368d34bd43ead64623b2d6d10ae0}} 
+\index{m\_readline@{m\_readline}!system\_readline@{system\_readline}}
+\index{system\_readline@{system\_readline}!m\_readline@{m\_readline}}
+\doxysubsubsection{\texorpdfstring{system\_readline()}{system\_readline()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+readline\+::system\+\_\+readline (\begin{DoxyParamCaption}\item[{character(kind=c\+\_\+char,len=$\ast$), intent(out)}]{line,  }\item[{character(kind=c\+\_\+char,len=$\ast$), intent(in)}]{prompt }\end{DoxyParamCaption})}
+
+\hypertarget{namespacem__readline_autotoc_md6}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__readline_autotoc_md6}
+system\+\_\+readline(3f) -\/ \mbox{[}M\+\_\+readline\mbox{]} Call readline(3c) from Fortran (L\+I\+C\+E\+N\+SE\+:PD) \hypertarget{namespacem__readline_autotoc_md7}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__readline_autotoc_md7}
+\begin{DoxyVerb} character(kind=c_char,len=*),intent(in) :: prompt
+ character(kind=c_char,len=*),intent(out) :: line
+\end{DoxyVerb}
+\hypertarget{namespacem__readline_autotoc_md8}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__readline_autotoc_md8}
+\begin{DoxyVerb}The system_readline(3f) uses the ISO_C_BINDING module to create a
+binding to the GNU readline(3c) procedure from Fortran programs.
+\end{DoxyVerb}
+\hypertarget{namespacem__readline_autotoc_md9}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__readline_autotoc_md9}
+\begin{DoxyVerb}The test program is basically just a read loop that prompts for
+lines of input read with readline(3c). You can edit the line being
+read with readline(3c) per its documentation. At a minimum, you can
+probably move around the line with the left and right arrow keys, and
+insert characters by typing them wherever you moved the cursor to,
+and use the DEL/ RUBOUT key to delete characters and such. If you use
+a GNU/Linux shell with command line editing, you are probably familiar
+with readline(3c)'s function.
+
+It quits if you enter 'q' on an input line, and it dumps the history if
+you enter 'h'.
+
+It is presented here as a Bourne shell script that creates the necessary
+files and does a "compile, load, and go"
+\end{DoxyVerb}
+
+
+the test program
+
+program demo\+\_\+system\+\_\+readline use \mbox{\hyperlink{namespacem__readline}{m\+\_\+readline}}, only \+: system\+\_\+readline implicit none character(len=256) \+:: line integer \+:: cstat character(len=256) \+:: sstat
+
+write($\ast$,$\ast$)\textquotesingle{} \+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} Your input lines are now editable using the G\+NU\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} readline(3\+C) procedure. By default, up-\/arrow and\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} down-\/arrow go thru the history lines; left and right arrow\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} keys and delete and just typing characters let you do\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} simple editing. Far more input control is available.\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} See the browser pages and man(1) pages for readline(3c).\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} \+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{} Enter text and then edit it. \char`\"{}q\char`\"{} quits; \char`\"{}h\char`\"{} display history\+:\textquotesingle{}
+
+do call system\+\_\+readline(line,\textquotesingle{}readline$>$\textquotesingle{}) ! read editable input line if(line.\+eq.\textquotesingle{}q\textquotesingle{}) stop call execute\+\_\+command\+\_\+line(trim(line),cmdstat=cstat,cmdmsg=sstat) enddo end program demo\+\_\+system\+\_\+readline \hypertarget{namespacem__readline_autotoc_md10}{}\doxysubsubsection{A\+U\+T\+H\+OR}\label{namespacem__readline_autotoc_md10}
+John S. Urban \hypertarget{namespacem__readline_autotoc_md11}{}\doxysubsubsection{L\+I\+C\+E\+N\+SE}\label{namespacem__readline_autotoc_md11}
+Public Domain
+
+Although this interface to readline(3c) is released as Public Domain, note that the Readline library itself is free software, distributed under the terms of the \mbox{[}G\+NU\mbox{]} General Public License, version 2. 
