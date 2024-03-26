@@ -25,7 +25,7 @@ auto-executables = true
 auto-examples = true
 auto-tests = true
 
-#module-naming = true
+module-naming = true
 
   ### Package-level External Library Links
   #
@@ -51,7 +51,7 @@ name="test_suite"
 source-dir="test"
 main="test_suite_M_readline.f90"
 [test.dependencies]
-M_framework   = { git = "https://github.com/urbanjost/M_framework.git" }
+M_framework = {namespace = "GPF"}
 #  # This is your fpm(Fortran Package Manager) manifest file
 #  # ("fpm.toml"). It is heavily annotated to help guide you though
 #  # customizing a package build, although the defaults are sufficient
@@ -279,7 +279,7 @@ M_framework   = { git = "https://github.com/urbanjost/M_framework.git" }
 #  # all codes. It is up to the developer to ensure that nothing except
 #  # developer test programs rely upon it.
 #
-##M_framework    = { git = "https://github.com/urbanjost/M_framework.git" }
+##M_framework = {namespace = "GPF"}
 ##M_verify = { git = "https://github.com/urbanjost/M_verify.git" }
 #
 #  #-----------------------------------
