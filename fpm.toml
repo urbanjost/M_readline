@@ -12,7 +12,7 @@ homepage = "https://github.com/urbanjost/M_readline.git"
 
 # demo programs
 [install]
-library=true
+   library=true
 [build] # General Build Options
 
   ###  Automatic target discovery
@@ -21,9 +21,9 @@ library=true
   # for program sources and builds them. To disable this automatic discovery of
   # program targets set the following to "false":
 
-auto-executables = true
-auto-examples = true
-auto-tests = true
+   auto-executables = true
+   auto-examples = true
+   auto-tests = true
 
 module-naming = true
 
@@ -51,7 +51,8 @@ name="test_suite"
 source-dir="test"
 main="test_suite_M_readline.f90"
 [test.dependencies]
-M_framework = {namespace = "GPF"}
+M_framework  = { git = "https://github.com/urbanjost/M_framework.git" }
+#M_framework = {namespace = "GPF"}
 #  # This is your fpm(Fortran Package Manager) manifest file
 #  # ("fpm.toml"). It is heavily annotated to help guide you though
 #  # customizing a package build, although the defaults are sufficient
@@ -101,7 +102,7 @@ M_framework = {namespace = "GPF"}
 #  # The project version number is a string. A recommended scheme for
 #  # specifying versions is the Semantic Versioning scheme.
 #
-#license = "license"
+#license = "MIT"
 #  # Licensing information specified using SPDX identifiers is preferred
 #  # (eg. "Apache-2.0 OR MIT" or "LGPL-3.0-or-later").
 #

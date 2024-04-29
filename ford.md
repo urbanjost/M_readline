@@ -7,7 +7,7 @@ output_dir: docs/fpm-ford
 project: M_readline
 summary: call C readline procedure
 project_github: https://github.com/urbanjost/M_readline
-project_download:
+project_download: https://github.com/urbanjost/M_readline/archive/refs/heads/master.zip
 author: John Doe
 author_email: urbanjost@gmail.com
 github: https://github.com/urbanjost/M_readline
